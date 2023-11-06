@@ -1,11 +1,11 @@
 spring:
   application:
     name: eureka-server
-  boot:
-    admin:
-      context-path: /admin
+  # boot:
+  #   admin:
+  #     context-path: /admin
 server:
-  port: 8081
+  port: 8082
 eureka:
   instance:
     hostname: localhost
@@ -13,10 +13,9 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://localhost:8082/eureka/
-#       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-#   server:
-#     waitTimeInMsWhenSyncEmpty: 5
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    waitTimeInMsWhenSyncEmpty: 5
       
       
 # management:
